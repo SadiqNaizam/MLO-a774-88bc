@@ -61,12 +61,25 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // PRD specific accent colors
+        accentBlue: '#3B82F6',
+        accentRed: '#F06548',
+        accentYellow: '#F59E0B',
+        accentGreen: '#10B981',
+        accentPurple: '#8B5CF6',
+        // Semantic colors from PRD (already covered by HSL vars but can be explicit if needed)
+        primaryText: '#212529', // Maps to 'foreground'
+        secondaryText: '#6B7280', // Maps to 'muted-foreground'
 			},
+			fontFamily: {
+        sans: ['var(--font-sans)'],
+      },
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+        // --radius is 0.375rem (6px) based on PRD 'rounded-md'
+				sm: 'calc(var(--radius) - 2px)', // approx 4px / 0.25rem
+				md: 'var(--radius)',             // 0.375rem (PRD default 'rounded-md')
+				lg: 'calc(var(--radius) + 4px)', // approx 10px / 0.625rem
 			},
 			keyframes: {
 				'accordion-down': {
